@@ -1,0 +1,20 @@
+class Kadane{
+    
+    // Function to find subarray with maximum sum
+    // arr: input array
+    // n: size of array
+    int maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+        int m =arr[0],res=arr[0];
+        
+        for(int i=1;i<n;i++)
+        {
+            m=Math.max(m+arr[i],arr[i]);
+            res=Math.max(res,m);
+        }
+        return res;
+        
+    }
+    
+}
