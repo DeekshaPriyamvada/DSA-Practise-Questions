@@ -1,0 +1,32 @@
+class Solution{
+    static ArrayList<Integer> spirallyTraverse(int matrix[][], int r, int c)
+    {
+        // code here 
+        ArrayList<Integer> sb=new ArrayList<Integer>();
+        
+        int top=0,left=0,right=c-1,bottom=r-1;
+        while(top<=bottom && left<=right)
+       {
+            for(int i=left;i<=right;i++)
+                sb.add(matrix[top][i]);
+            top++;
+            for(int i=top;i<=bottom;i++)
+                sb.add(matrix[i][right]);
+            right--;
+            
+            if(top<=bottom)
+            {
+                for(int i=right;i>=left;i--)
+                    sb.add(matrix[bottom][i]);
+                bottom--;
+            }
+            if(left<=right)
+            {
+                for(int i=bottom;i>=top;i--)
+                    sb.add(matrix[i][left]);
+                left++;
+            }
+       }
+       return sb;
+    }
+}
